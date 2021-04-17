@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/bootstrap.css')}}">
+    <title>Welcome</title>
+    <style>
+        li {
+            list-style-type: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container border border-5 mt-5 p-5">
+        <h1 style="color: green;">Successful Login!</h1>
+
+        <h2 class="mt-5 mb-3">Account info:</h2>
+        <ul class="list-group list-group-flush mb-3">    <!--List of the user account information-->
+            <li>Name: {{user_tp[0]['first_name']}} {{user_tp[0]['last_name']}}</li>
+            <li>Email: {{user_tp[0]['email']}}</li>
+            <li>Account Created: {{user_tp[0]['created_at']}}</li>
+        </ul>
+        <a href="http://127.0.0.1:5000/logout" role="button" class="btn btn-outline-dark">Logout</a>
+    </div>
+</body>
+</html>
